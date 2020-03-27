@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"/>
+    
+      <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+    
+   
+    <title>Fire Train Schedule</title>
+  </head>
+  <body>
+    <h1 id="Title"></h1>
+    <header class="masthead">
+      <div class="container1">
+        <h1 class="display-4">Fire Train Times</h1>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="panel-heading"><h3>Current Train Schedule</h3></div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Train Name</th>
+              <th>Destination</th>
+              <th>Frequency (Mins)</th>
+              <th>Next Arrival</th>
+              <th>Minutes Away</th>
+            </tr>
+          </thead>
+          <tbody id ="add-row">
+          <!---The javascript generated all of our table data-->
+          </tbody>
+        </table>
+      </div>
+      <div class="data"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="train-name">Train Name</label>
+      <input type="text" class="form-control" id="train-name" />
+    </div>
+
+    <div class="form-group">
+      <label for="destination">Destination</label>
+      <input type="text" class="form-control" id="destination" />
+    </div>
+
+    <div class="form-group">
+      <label for="military-time">First Train Time (HH:mm - military time)</label>
+      <input type="text" class="form-control" id="military-time" />
+    </div>
+
+    <div class="form-group">
+      <label for="frequency">Frequency (min)</label>
+      <input type="text" class="form-control" id="frequency" />
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-outline-success"
+      id="submit"
+      onclick="scheduleTrain()"
+    >
+      Submit
+    </button>
+
+    <script src="javascript/app.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script> -->
+
+   <!--  <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyAvXXHJk5SQu-9-PgybjDuDyi851SJnXeQ",
+        authDomain: "fire-train-14629.firebaseapp.com",
+        databaseURL: "https://fire-train-14629.firebaseio.com",
+        projectId: "fire-train-14629",
+        storageBucket: "fire-train-14629.appspot.com",
+        messagingSenderId: "1071244068175",
+        appId: "1:1071244068175:web:b361d2391cc011d68a313a",
+        measurementId: "G-8VJSFNXYJD"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script> -->
+  </body>
+</html>
