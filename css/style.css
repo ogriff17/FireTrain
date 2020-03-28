@@ -3,8 +3,8 @@
 }
 
 body{
-    background:red;
-    background-image: url(..images/trainpic.jpg);
+    background-color: lightslategray;
+
     
    
 }
@@ -19,16 +19,46 @@ body{
     background-image: url(../images/flames.jfif);
     border-image-width:20px;
     padding-top:50px;
-    padding-bottom:50px;
+    padding-bottom:70px;
     color:lightgoldenrodyellow;
     text-align: center;
     margin-top:-20px;
     
 }
 .container{
+    color:red;
+    background-color:lightgray;
+    padding-top:30px;
+    padding-bottom:20px;
     
 
 }
 .col {
     Color:black;
+}
+
+.form-group{
+    background-color:orangered;
+    text-align: center;
+    font-size:30px;
+    margin-top:-20px;
+}
+
+.box-model{
+    padding-bottom:-50px;
+    color:red;
+    background-color:lightgray;
+    
+}
+
+.masthead{
+    margin-bottom:-20px;
+}
+
+.panel-heading{
+    text-align:center;
+}
+.submit{
+    background-color: orangered; /*Tried to make changes on the background for submit-could not find it/*
+    
 }

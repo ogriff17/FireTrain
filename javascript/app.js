@@ -1,5 +1,5 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyAvXXHJk5SQu-9-PgybjDuDyi851SJnXeQ",
+    apiKey: "",
     authDomain: "fire-train-14629.firebaseapp.com",
     databaseURL: "https://fire-train-14629.firebaseio.com",
     projectId: "fire-train-14629",
@@ -42,20 +42,34 @@ function scheduleTrain (){
     document.getElementById("train-name").innerHTML = " ";
   
    alert("You got to the bottom without failing!"); 
-   
 };
 
 database.ref().on("child_added", function(childSnapshot){
-    alert("Running code here!");
-    $("#add-row").append("<tr><td>" + childSnapshot.val().trainName +
-    "</td><td>" + childSnapshot.val().destination + 
-    "</td><td>" + childSnapshot.val().frequency + 
-    "</td><td>" + childSnapshot.val().firstTrainTime + 
-    "</td><td>" + "15" + "</td></tr>");
-    //minutesDiff ();
-
-
+    //alert("Running code here!");
+    var timeTrainArrives;
+    var minutesAway;
+    firstTrainTime = childSnapshot.val().firstTrainTime;
+    destination = childSnapshot.val().destination;
+    trainName = childSnapshot.val().trainName;
+    frequency = childSnapshot.val().frequency;
+    minutesAway = calcMinAway(firstTrainTime, frequency);
+    timeTrainArrives = moment().add(minutesAway, "minutes");
+    timeTrainArrives = moment(timeTrainArrives).format("HH:mm");
+    $("#add-row").append("<tr><td>" + trainName +
+    "</td><td>" + destination + 
+    "</td><td>" + frequency + 
+    "</td><td>" + timeTrainArrives +    
+    "</td><td>" + minutesAway +  "</td></tr>");
 });
+
+function calcMinAway(firstTrainTime, frequency){
+    var firstTrainYesterday = moment(firstTrainTime, "hh:mm").subtract(1, "days");
+    var diffMinutes = moment().diff(moment(firstTrainYesterday), "minutes");
+    var remainder = diffMinutes % frequency;
+    var minAway = frequency - remainder;
+    return (minAway); 
+    //alert(firstTrainYesterday);
+}
 
 function minutesDiff () {
     alert("Do you see me now?");
