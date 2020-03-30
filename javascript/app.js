@@ -1,5 +1,5 @@
 var firebaseConfig = {
-    apiKey: "",
+    apiKey: "AIzaSyAvXXHJk5SQu-9-PgybjDuDyi851SJnXeQ",
     authDomain: "fire-train-14629.firebaseapp.com",
     databaseURL: "https://fire-train-14629.firebaseio.com",
     projectId: "fire-train-14629",
